@@ -1,0 +1,270 @@
+@import "../variables/colors";
+@import "../variables/_mixins";
+@include resetStyles;
+
+.principal {
+    @media (min-width: 200px){
+        width: 100%;
+    }
+
+    @media (min-width: 1200px){
+        width: 1200px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 8rem 0;
+    background: $header-color;
+
+    @media(max-width: 1200px){
+        padding: 3rem 1.5rem 0 1.5rem;
+    }
+
+    .principal {
+        @include orderFlex(row, space-between, center);
+    }
+
+    .icono {
+       @include imageSize(15rem, auto);
+
+       @media(max-width: 475px){
+            @include imageSize(4rem, auto);
+            @include orderFlex(column, column, center);
+       }
+    }
+
+    ul {
+        @media (max-width: 450px) {
+        @include orderFlex(column, column, center);
+        }
+    
+        @media (min-width: 1200px) {
+            display: block;
+        }
+    }
+}    
+
+.about {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 8rem 0;
+    background: $main-color;
+
+    .principal {
+        @media(min-width: 200px){
+            @include orderFlex(column, center, center);
+        }
+
+        @media(min-width: 1200px) {
+            @include orderFlex(column, space-between, center);
+        }
+    }
+
+    .aboutContent {
+        width: 50%;
+
+        @media (max-width: 1200px){
+            width: 100%;
+            padding: 0 1.5rem;
+            padding-top: 4rem;
+            text-align: center;
+        }   
+    }
+
+    span{
+        padding: 1rem 1.5rem;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 2.2rem;
+        margin: 1rem 0 5.5rem 0;
+    }
+
+    a {
+        padding: 1rem 1.5rem;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+
+        &:hover {
+            padding: 1.1rem 1.6rem;
+            transition: .1s all;
+        }
+    }
+}    
+
+.listproducts {
+    @include orderFlex(column, center, center);
+    background:$section-color;
+    padding: 8rem 0;
+    text-align: center;
+
+    .principal {
+        @include orderFlex(column, center, center);
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: blue;
+    }
+
+    ul {
+        width: 100%;
+        margin-top: 7rem;
+        @include orderFlex(row, space-between, center);
+        flex-wrap: wrap;
+
+        @media (max-width: 1200px){
+            @include orderFlex(column, space-between, center);
+        }
+
+        li {
+            flex:  0 0 270px;
+            @include orderFlex(column, center, center);
+            background:white;
+            border-radius: 3rem;
+            padding: 2.5rem;
+            margin-bottom: 5rem;
+            box-shadow: 2px 0px 17px 2px rgba(black,0.30);
+            position: relative;
+
+            @media (max-width: 1200px){
+                width: 400px;
+            }
+
+            @media (max-width: 575px){
+                width: 300px;
+            }
+
+            div {
+                @include imageSize(14rem, auto);
+            }
+
+            span {
+                &:first-of-type {
+                    color: blue;
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                    margin-top: 1.9rem;
+
+                    @media (max-width: 1200px){
+                        font-size: 7vw;
+                    }
+                }
+
+                &:last-of-type {
+                    color: blue;
+                    text-transform: uppercase;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin: 2rem 0;
+                }
+            }
+
+            button {
+                background: yellow;
+                color: black;
+                text-transform: uppercase;
+                padding: 0.8rem 4rem;
+                font-size: 1.1rem;
+                font-weight: 700;
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+
+            }
+
+        }
+    }
+}
+
+.contacto{
+    @include orderFlex(column, center, center);
+    padding: 8rem 0 4rem 0;
+    background: $main-color;
+    color:black;
+    text-transform: uppercase;
+
+    .principal {
+        @include orderFlex(column, center, center);
+    }
+
+    .detalles{
+        h2{
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .legales{
+        h2{
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+footer {
+    @include orderFlex(column, center, center);
+    padding: 8rem 0 4rem 0;
+    background: $footer-color;
+    color: black;
+    text-transform: uppercase;
+    
+    .principal {
+        @include orderFlex(column, space-around, center);
+    }
+
+    .registrar {
+        a {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            background-color: white;
+            color: black; 
+        }
+    }   
+
+    .iniciar {
+        a {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            background-color: white;
+            color: black; 
+        }
+    }
+    
+}    
+
+.hamburguecita {
+    div{
+       width: 4rem;
+       position: fixed;
+       right: 0;
+       bottom: 0;
+       z-index: 1;
+    }
+}
