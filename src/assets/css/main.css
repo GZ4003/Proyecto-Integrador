@@ -48,7 +48,7 @@ header {
   display: flex;
   justify-content: center;
   padding: 3rem 0 8rem 0;
-  background: #da291c;
+  background:#c3d7ee;
 }
 @media (max-width: 1200px) {
   header {
